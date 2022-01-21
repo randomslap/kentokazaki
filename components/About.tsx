@@ -69,7 +69,9 @@ const ImageContainer = styled.div`
 	-moz-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 `
 
-const Title = styled.h2``
+const Title = styled.h2`
+	font-size: 32px;
+`
 
 const Body = styled.p`
 	font-weight: bold;
