@@ -11,14 +11,21 @@ export default createGlobalStyle`
 
     a:link {
         text-decoration: none !important; 
+        -webkit-text-decoration-line: none !important;
     }
+
     a:hover { 
         text-decoration: none !important;
+        -webkit-text-decoration-line: none !important;
     }
+
     a:active { 
         text-decoration: none !important; 
+        -webkit-text-decoration-line: none !important;
     }
+
     a:visited { 
         text-decoration: none !important; 
+        -webkit-text-decoration-line: none !important;
     }
 `
