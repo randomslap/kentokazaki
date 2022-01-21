@@ -24,6 +24,14 @@ const projects: project[] = [
 		position: "Web3/Solidity Developer",
 	},
 	{
+		url: "https://www.densocial.io/",
+		title: "Den Social",
+		image: "/projects/densocial.png",
+		description:
+			"A mobile app for finding college roommates and friends. Built with React Native, Redux, Node.js, and MongoDB.",
+		position: "Full Stack Developer",
+	},
+	{
 		url: "https://itsokay.gg/",
 		title: "It's Okay",
 		image: "/projects/itsokay.png",
