@@ -5,8 +5,9 @@ export default createGlobalStyle`
         margin: 0px !important;
     }
 
-    h1, h2, h3, p {
+    h1, h2, h3, p, a {
         font-family: 'Ubuntu', sans-serif;
+        color: black;
     }
 
     a:link {
