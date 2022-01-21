@@ -47,7 +47,7 @@ const Container = styled.a`
 	@media (max-width: 1216px) {
 		width: 350px;
 		height: 575px;
-		padding-bottom: 20px;
+		padding-bottom: 30px;
 	}
 `
 
