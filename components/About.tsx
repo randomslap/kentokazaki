@@ -49,7 +49,7 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	width: 50%;
-	margin-top: 200px;
+	margin-top: 150px;
 `
 
 const SubContainer = styled.div`
@@ -62,6 +62,9 @@ const SubContainer = styled.div`
 `
 
 const ImageContainer = styled.div`
+	height: 75%;
+	width: 75%;
+	margin-left: 50px;
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
