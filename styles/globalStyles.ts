@@ -6,7 +6,7 @@ export default createGlobalStyle`
     }
 
     h1, h2, h3, p, a {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Armata', sans-serif;
         color: black;
     }
 

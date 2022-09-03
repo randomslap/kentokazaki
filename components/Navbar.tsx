@@ -51,7 +51,7 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 2px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);

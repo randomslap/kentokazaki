@@ -35,7 +35,7 @@ const Container = styled.a`
 	padding-bottom: 20px;
 	margin-bottom: 50px;
 	border: solid #bdbdbd 1px;
-	border-radius: 10px;
+	border-radius: 2px;
 	text-decoration: none;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
