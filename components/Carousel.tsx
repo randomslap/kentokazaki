@@ -13,7 +13,7 @@ const projects: project[] = [
 		image: "/projects/chalkapp.png",
 		description:
 			"A mobile app for Esports tournaments. Built with React Native, Apollo GraphQL, and AWS.",
-		position: "Lead Full Stack Developer",
+		position: "Lead Software Engineer",
 	},
 	{
 		url: "https://www.densocial.io/",
@@ -21,7 +21,15 @@ const projects: project[] = [
 		image: "/projects/densocial.png",
 		description:
 			"A mobile app for finding college roommates and friends. Built with React Native, Redux, Node.js, and MongoDB.",
-		position: "Full Stack Developer",
+		position: "Lead React Native Engineer",
+	},
+	{
+		url: "https://charcuterie-nft.vercel.app",
+		title: "Charcuterie NFT",
+		image: "/projects/charcuterie.png",
+		description:
+			"A Web3 dApp for minting and trading NFTs. Built with React, Redux, Ethers.js, Hardhat.js, Alchemy API, and Typescript.",
+		position: "React/Solidity Engineer",
 	},
 	{
 		url: "https://itsokay.gg/",
@@ -37,7 +45,7 @@ const projects: project[] = [
 		image: "/projects/dapp.png",
 		description:
 			"A template for single page dApps with a smart contract deployed on Rinkeby Testnet. This was written and deployed in a day. Built with React, Redux, Ethers.js, Hardhat.js, Alchemy API, and Typescript.",
-		position: "Web3/Solidity Developer",
+		position: "React/Solidity Engineer",
 	},
 ]
 
