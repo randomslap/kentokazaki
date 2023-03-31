@@ -12,7 +12,7 @@ const projects: project[] = [
 		title: "Chalk App",
 		image: "/projects/chalkapp.png",
 		description:
-			"A mobile app for Esports tournaments. Built with React Native, Apollo GraphQL, and AWS.",
+			"A mobile app for esports tournaments for all gamers. Built with React Native, Apollo GraphQL, and AWS.",
 		position: "Lead Software Engineer",
 	},
 	{
