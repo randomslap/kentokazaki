@@ -12,7 +12,6 @@ const About: React.FC = () => {
 	return (
 		<Container>
 			<SubContainer>
-				<Title>About Me</Title>
 				<ImageContainer>
 					<Image
 						src="/profile.jpg"
@@ -25,17 +24,21 @@ const About: React.FC = () => {
 					/>
 				</ImageContainer>
 				<Body>
-					I am a {age} year old full stack software developer. Over
-					the years as a software developer, I have always pursued to
-					learn new libraries and languages. I can easily understand a
-					new technology within weeks. For example, I learned how to
-					write and deploy Solidity smart contracts and Web3 in two
-					weeks. At my web development course in 2019, I understood
-					how to utilize Redux in the same week they started teaching
-					the basics of React. One of my favorite things to do is to
-					share my knowledge with others in this industry. As a leader
-					and a developer, I will continue to strive in learning and
-					sharpening new skills.
+					I&apos;m a skilled full-stack software developer with a
+					passion for learning new technologies and languages. With
+					years of experience, I&apos;ve developed a talent for
+					quickly understanding and utilizing new tools and
+					frameworks. In just two weeks, I was able to master Solidity
+					smart contracts and Web3 deployment, and in the same week
+					that my web development course began teaching React basics,
+					I was already using Redux. <br />
+					<br />I love sharing my knowledge with others in the
+					industry and mentoring junior developers. As a leader,
+					I&apos;m committed to staying on the cutting edge of new
+					developments and continuously honing my skills. Whether
+					I&apos;m working on a personal project or collaborating with
+					a team, I always strive to deliver high-quality work and
+					exceed expectations.
 				</Body>
 			</SubContainer>
 		</Container>
