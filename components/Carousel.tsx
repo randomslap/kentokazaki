@@ -16,14 +16,6 @@ const projects: project[] = [
 		position: "Lead Full Stack Developer",
 	},
 	{
-		url: "https://react-redux-dapp-template.vercel.app/",
-		title: "React Redux dApp Template",
-		image: "/projects/dapp.png",
-		description:
-			"A template for single page dApps with a smart contract deployed on Rinkeby Testnet. This was written and deployed in a day. Built with React, Redux, Ethers.js, Hardhat.js, Alchemy API, and Typescript.",
-		position: "Web3/Solidity Developer",
-	},
-	{
 		url: "https://www.densocial.io/",
 		title: "Den Social",
 		image: "/projects/densocial.png",
@@ -38,6 +30,14 @@ const projects: project[] = [
 		description:
 			"A store-front website for It's Okay's merchandise. Built with Next.js, Redux, Apollo GraphQL, and Shopify API.",
 		position: "Full Stack Web Developer",
+	},
+	{
+		url: "https://react-redux-dapp-template.vercel.app/",
+		title: "React Redux dApp Template",
+		image: "/projects/dapp.png",
+		description:
+			"A template for single page dApps with a smart contract deployed on Rinkeby Testnet. This was written and deployed in a day. Built with React, Redux, Ethers.js, Hardhat.js, Alchemy API, and Typescript.",
+		position: "Web3/Solidity Developer",
 	},
 ]
 
