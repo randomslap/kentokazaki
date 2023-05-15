@@ -44,6 +44,10 @@ const Container = styled.a`
 		text-decoration: none;
 		color: black;
 	}
+	&:hover {
+		opacity: 0.5;
+		transition: all 0.3s ease;
+	}
 	@media (max-width: 1216px) {
 		width: 350px;
 		height: 575px;
