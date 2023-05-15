@@ -44,7 +44,7 @@ const projects: project[] = [
 		title: "React Redux dApp Template",
 		image: "/projects/dapp.png",
 		description:
-			"A template for single page dApps with a smart contract deployed on Rinkeby Testnet. This was written and deployed in a day. Built with React, Redux, Ethers.js, Hardhat.js, Alchemy API, and Typescript.",
+			"A template for single page dApps with a smart contract deployed on Sepolia Testnet. This was written and deployed in a day. Built with React, Redux, Ethers.js, Hardhat.js, Alchemy API, and Typescript.",
 		position: "React/Solidity Engineer",
 	},
 ]
