@@ -1,2 +1,1 @@
-# website3d
-Created with CodeSandbox
+# Kent Okazaki
