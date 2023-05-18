@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Avatar, Container, Fade, Stack } from '@mui/material'
+import { Avatar, IconButton, Fade, Stack } from '@mui/material'
 import TextTransition, { presets } from 'react-text-transition'
+
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import GitHubIcon from '@mui/icons-material/GitHub'
 
 const TEXTS = ['Kent Okazaki', 'a Full-Stack Developer', 'a Mobile App Developer', 'a software nerd']
 
@@ -29,6 +32,22 @@ const Hero = () => {
           </h3>
         </Stack>
       </Fade>
+      <Stack flex flexDirection={'row'}>
+        <Fade in style={{ transitionDelay: '300ms' }}>
+          <a href="https://github.com/randomslap" target="_blank">
+            <IconButton className="no-cursor" style={{ color: 'white' }}>
+              <GitHubIcon style={{ fontSize: 50 }} />
+            </IconButton>
+          </a>
+        </Fade>
+        <Fade in style={{ transitionDelay: '300ms' }}>
+          <a href="https://www.linkedin.com/in/kentokazaki/" target="_blank">
+            <IconButton className="no-cursor" style={{ color: 'white' }}>
+              <LinkedInIcon style={{ fontSize: 60 }} />
+            </IconButton>
+          </a>
+        </Fade>
+      </Stack>
     </Stack>
   )
 }

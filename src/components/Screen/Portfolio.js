@@ -108,7 +108,7 @@ const Portfolio = () => {
               </Typography>
             </CardContent>
             <Stack>
-              <Button onClick={() => handleOpen(card)} size="large">
+              <Button className="no-cursor" onClick={() => handleOpen(card)} size="large">
                 View Details
               </Button>
             </Stack>

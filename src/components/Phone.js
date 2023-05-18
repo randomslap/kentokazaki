@@ -66,10 +66,10 @@ const Scene = ({ portal, ...props }) => {
   return (
     <group {...props} dispose={null}>
       <group ref={hand}>
-        <Clone position={[250, -170, 0]} object={nodes['hand-r']} rotation-y={0.35} inject={<meshStandardMaterial color="white" />} />
+        <Clone position={[250, -190, 0]} object={nodes['hand-r']} rotation-y={0.35} inject={<meshStandardMaterial color="white" />} />
       </group>
       <FloatImpl floatIntensity={100} rotationIntensity={0.5} speed={1}>
-        <group position={[0, -50, 0]} rotation={[-0.15, 0, 0]}>
+        <group position={[0, -55, 0]} rotation={[-0.15, 0, 0]}>
           <group name="phone" position={[0, 0, -70]}>
             <Clone object={[nodes['Rectangle 4'], nodes['Rectangle 3'], nodes['Boolean 2']]} inject={<meshStandardMaterial color="black" />} />
             <Mask id={1} colorWrite={false} depthWrite={true} geometry={nodes.screen.geometry} castShadow receiveShadow position={[0, 0, 9.89]}>

@@ -15,7 +15,7 @@ const Screen = () => {
           <p>Scroll or Click this Button!</p>
         </Box>
         <Box>
-          <Button onClick={executeScroll} size="large" variant="outlined" color="primary">
+          <Button className="no-cursor" onClick={executeScroll} size="large" variant="outlined" style={{ color: 'white', borderColor: 'white' }}>
             Check out my work
           </Button>
         </Box>

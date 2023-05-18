@@ -18,6 +18,9 @@ const darkTheme = createTheme({
       main: '#00bcd4',
       dark: '#00bcd4',
     },
+    text: {
+      primary: '#fff',
+    },
   },
   typography: {
     fontFamily: [
@@ -32,17 +35,6 @@ const darkTheme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
-  },
-  components: {
-    MuiButton: {
-      defaultProps: {
-        size: 'small',
-        style: {
-          color: '#00bcd4',
-          backgroundColor: 'black',
-        },
-      },
-    },
   },
 })
 
