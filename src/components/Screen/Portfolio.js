@@ -47,9 +47,9 @@ const Popup = ({ open, handleClose, project }) => (
     aria-labelledby="modal-modal-title"
     aria-describedby="modal-modal-description"
     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <Card sx={{ maxWidth: 400, height: 550 }} color="dark">
+    <Card sx={{ maxWidth: 400, height: 575 }} color="dark">
       <CardMedia component="img" alt="green iguana" height={350} image={project?.image} />
-      <Stack flex justifyContent={'space-between'} height={'30%'}>
+      <Stack flex justifyContent={'space-between'} height={'35%'}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {project?.title}
@@ -97,7 +97,7 @@ const Portfolio = () => {
     <>
       <Stack spacing={10} marginY={15}>
         {cards.map((card, i) => (
-          <Card sx={{ maxWidth: 300 }} color="dark" key={i}>
+          <Card sx={{ maxWidth: 300 }} color="dark" key={i} onClick={() => handleOpen(card)}>
             <CardMedia component="img" alt="green iguana" height="190" image={card.image} />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -108,7 +108,7 @@ const Portfolio = () => {
               </Typography>
             </CardContent>
             <Stack>
-              <Button className="no-cursor" onClick={() => handleOpen(card)} size="large">
+              <Button className="no-cursor" size="large">
                 View Details
               </Button>
             </Stack>
