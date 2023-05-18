@@ -58,7 +58,7 @@ const Scene = ({ portal, ...props }) => {
     v.unproject(state.camera)
     hand.current.rotation.x = THREE.MathUtils.lerp(hand.current.rotation.x, clicked ? -0.7 : -0.5, 0.2)
     hand.current.position.lerp({ x: v.x - 100, y: wheel.current + v.y, z: v.z }, 0.4)
-    state.camera.zoom = THREE.MathUtils.lerp(state.camera.zoom, clicked ? 0.9 : 0.7, clicked ? 0.025 : 0.15)
+    state.camera.zoom = THREE.MathUtils.lerp(state.camera.zoom, clicked ? 1 : 0.9, clicked ? 0.025 : 0.15)
     state.camera.position.lerp({ x: -state.pointer.x * 400, y: -state.pointer.y * 200, z: 1000 }, 0.1)
     state.camera.lookAt(0, 0, 0)
     state.camera.updateProjectionMatrix()
@@ -69,7 +69,7 @@ const Scene = ({ portal, ...props }) => {
         <Clone position={[250, -190, 0]} object={nodes['hand-r']} rotation-y={0.35} inject={<meshStandardMaterial color="white" />} />
       </group>
       <FloatImpl floatIntensity={100} rotationIntensity={0.5} speed={1}>
-        <group position={[0, -55, 0]} rotation={[-0.15, 0, 0]}>
+        <group position={[0, 30, 0]} rotation={[-0.15, 0, 0]}>
           <group name="phone" position={[0, 0, -70]}>
             <Clone object={[nodes['Rectangle 4'], nodes['Rectangle 3'], nodes['Boolean 2']]} inject={<meshStandardMaterial color="black" />} />
             <Mask id={1} colorWrite={false} depthWrite={true} geometry={nodes.screen.geometry} castShadow receiveShadow position={[0, 0, 9.89]}>
