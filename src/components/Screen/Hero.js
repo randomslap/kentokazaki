@@ -19,7 +19,6 @@ const Hero = () => {
 
     return (
         <Stack
-            container
             justifyContent="flex-start"
             alignItems="center"
             height={width > 768 ? 700 : '80vh'}
@@ -34,7 +33,7 @@ const Hero = () => {
                 <Avatar alt="Kent Okazaki" src="https://avatars.githubusercontent.com/u/12478668?v=4" sx={{ width: 126, height: 126 }} />
             </Fade>
             <Fade in style={{ transitionDelay: '700ms' }}>
-                <Stack container alignItems="center" justifyContent="center" textAlign="center" direction={'row'} spacing={0.75}>
+                <Stack alignItems="center" justifyContent="center" textAlign="center" direction={'row'} spacing={0.75}>
                     <h3 style={{ marginLeft: 0 }}>I'm</h3>
                     <h3>
                         <TextTransition inline springConfig={presets.molasses}>

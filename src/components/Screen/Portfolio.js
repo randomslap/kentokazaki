@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Card, CardContent, CardMedia, Modal, Typography, Stack } from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Modal, Typography, Stack } from '@mui/material'
 
 const cards = [
     {
@@ -47,20 +47,24 @@ const Popup = ({ open, handleClose, project }) => (
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Card sx={{ maxWidth: 400, height: 575 }} color="dark">
+        <Card sx={{ maxWidth: 400, height: '45%' }} color="dark">
             <CardMedia component="img" alt={project?.title} height={350} image={project?.image} />
-            <Stack flex justifyContent={'space-between'} height={'35%'}>
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {project?.title}
-                    </Typography>
-                    <Typography variant="h6" color="text.primary">
-                        {project?.position}
-                    </Typography>
-                    <Typography gutterBottom variant="body2" color="text.secondary">
-                        {project?.description}
-                    </Typography>
-                </CardContent>
+            <Stack flex flexDirection="column" justifyContent="space-between" sx={{ height: '40%' }}>
+                <Stack flex justifyContent={'space-between'} spacing={1}>
+                    <Stack flex justifyContent={'space-between'} height={'35%'}>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {project?.title}
+                            </Typography>
+                            <Typography variant="h6" color="text.primary">
+                                {project?.position}
+                            </Typography>
+                            <Typography gutterBottom variant="body2" color="text.secondary">
+                                {project?.description}
+                            </Typography>
+                        </CardContent>
+                    </Stack>
+                </Stack>
                 <Stack flex flexDirection={'row'} alignItems={'center'} justifyContent={'space-evenly'}>
                     <a href={project?.url} target="_blank">
                         <Button size="large">Open</Button>
