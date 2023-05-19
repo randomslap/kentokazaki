@@ -1,12 +1,13 @@
 import * as THREE from 'three'
 import { useLayoutEffect, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl, Scroll, ScrollControls } from '@react-three/drei'
+import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl } from '@react-three/drei'
 import useSpline from '@splinetool/r3f-spline'
 
 import useWindowSize from '../hooks/useWindowSize'
 
 import Screen from './Screen'
+import Settings from './Settings'
 
 const Phone = () => {
     const container = useRef()
@@ -54,6 +55,8 @@ const Scene = ({ portal, ...props }) => {
     const wheel = useRef(0)
     const hand = useRef()
     const screen = useRef()
+    const [open, setOpen] = useState(false)
+    const [drag, setDrag] = useState(false)
     const [isClicked, click] = useState(false)
     const [prevPos, setPrevPos] = useState(0)
     const mouseCoords = useRef({
@@ -80,7 +83,7 @@ const Scene = ({ portal, ...props }) => {
     })
 
     const handleDragStart = (e) => {
-        if (!screen.current) return
+        if (!screen.current || !drag) return
         const slider = screen.current
         const startX = e.pageX - slider.offsetLeft
         const startY = e.pageY - slider.offsetTop
@@ -98,12 +101,27 @@ const Scene = ({ portal, ...props }) => {
     }
 
     const handleDrag = (e) => {
-        if (!isMouseDown || !screen.current) return
+        if (!isMouseDown || !screen.current || !drag) return
         e.preventDefault()
         const slider = screen.current
         const y = e.pageY - slider.offsetTop
         const walkY = mouseCoords.current.startY - y + prevPos
         slider.scrollTop = walkY
+    }
+
+    const handleOpen = () => {
+        document.querySelector('html').classList.remove('no-cursor')
+        document.querySelectorAll('button:not(.navbar-button)').forEach((element) => {
+            element.classList.remove('no-cursor')
+        })
+        setOpen(true)
+    }
+    const handleClose = () => {
+        document.querySelector('html').classList.add('no-cursor')
+        document.querySelectorAll('button:not(.navbar-button)').forEach((element) => {
+            element.classList.add('no-cursor')
+        })
+        setOpen(false)
     }
 
     // Temporary work around for rerender issue
@@ -113,6 +131,7 @@ const Scene = ({ portal, ...props }) => {
             click(false)
         }, 500)
     }, [])
+
     return (
         <group {...props} dispose={null}>
             <group ref={hand}>
@@ -124,20 +143,9 @@ const Scene = ({ portal, ...props }) => {
                         <Clone object={[nodes['Rectangle 4'], nodes['Rectangle 3'], nodes['Boolean 2']]} inject={<meshStandardMaterial color="black" />} />
                         <Mask id={1} colorWrite={false} depthWrite={true} geometry={nodes.screen.geometry} castShadow receiveShadow position={[0, 0, 9.89]}>
                             <Html ref={screen} className="content-embed" portal={portal} scale={40} transform zIndexRange={[-1, 0]}>
-                                <div
-                                    onMouseDown={handleDragStart}
-                                    onMouseUp={handleDragEnd}
-                                    onMouseMove={handleDrag}
-                                    onWheel={(e) => {
-                                        console.log(e.deltaY)
-                                        if (prevPos > -1900) {
-                                            setPrevPos(prevPos - e.deltaY)
-                                        } else {
-                                            setPrevPos(prevPos + e.deltaY)
-                                        }
-                                        console.log(prevPos)
-                                    }}>
-                                    <Screen />
+                                <div onMouseDown={handleDragStart} onMouseUp={handleDragEnd} onMouseMove={handleDrag}>
+                                    <Screen drag={drag} handleOpen={handleOpen} />
+                                    <Settings open={open} handleClose={handleClose} setDrag={setDrag} />
                                 </div>
                             </Html>
                         </Mask>

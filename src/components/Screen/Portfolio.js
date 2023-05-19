@@ -48,7 +48,7 @@ const Popup = ({ open, handleClose, project }) => (
         aria-describedby="modal-modal-description"
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Card sx={{ maxWidth: 400, height: '45%' }} color="dark">
-            <CardMedia component="img" alt={project?.title} height={350} image={project?.image} />
+            <CardMedia component="img" alt={project?.title} height={350} image={project?.image} draggable={false} />
             <Stack flex flexDirection="column" justifyContent="space-between" sx={{ height: '40%' }}>
                 <Stack flex justifyContent={'space-between'} spacing={1}>
                     <Stack flex justifyContent={'space-between'} height={'35%'}>

@@ -21,16 +21,16 @@ const Hero = () => {
         <Stack
             justifyContent="flex-start"
             alignItems="center"
-            height={width > 768 ? 700 : '80vh'}
+            height={width > 768 ? 400 : '80vh'}
             width={'100%'}
-            paddingTop={20}
+            paddingTop={5}
             spacing={1}
             flexDirection={'column'}>
             <Fade in style={{ transitionDelay: '500ms' }}>
                 <h4>Hi there!</h4>
             </Fade>
             <Fade in style={{ transitionDelay: '600ms' }}>
-                <Avatar alt="Kent Okazaki" src="https://avatars.githubusercontent.com/u/12478668?v=4" sx={{ width: 126, height: 126 }} draggable="false" />
+                <Avatar alt="Kent Okazaki" src="https://avatars.githubusercontent.com/u/12478668?v=4" sx={{ width: 126, height: 126 }} draggable={false} />
             </Fade>
             <Fade in style={{ transitionDelay: '700ms' }}>
                 <Stack alignItems="center" justifyContent="center" textAlign="center" direction={'row'} spacing={0.75}>
@@ -55,22 +55,6 @@ const Hero = () => {
                     </IconButton>
                 </Fade>
             </Stack>
-            {width > 768 && (
-                <Stack alignItems="center" justifyContent="center" textAlign="center" spacing={0}>
-                    <Fade in style={{ transitionDelay: '1600ms' }}>
-                        <h4>How to navigate:</h4>
-                    </Fade>
-                    <Fade in style={{ transitionDelay: '1700ms' }}>
-                        <p style={{ margin: 0 }}>Use the fingertip to click</p>
-                    </Fade>
-                    <Fade in style={{ transitionDelay: '1800ms' }}>
-                        <p style={{ margin: 0 }}>Use scrollwheel or click and drag to scroll</p>
-                    </Fade>
-                    <Fade in style={{ transitionDelay: '1900ms' }}>
-                        <p style={{ margin: 0 }}>Hold click to zoom</p>
-                    </Fade>
-                </Stack>
-            )}
         </Stack>
     )
 }
