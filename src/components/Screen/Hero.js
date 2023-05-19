@@ -45,18 +45,14 @@ const Hero = () => {
             </Fade>
             <Stack flex flexDirection={'row'}>
                 <Fade in style={{ transitionDelay: '1000ms' }}>
-                    <a href="https://github.com/randomslap" target="_blank">
-                        <IconButton className="no-cursor" style={{ color: 'white' }}>
-                            <GitHubIcon style={{ fontSize: 50 }} />
-                        </IconButton>
-                    </a>
+                    <IconButton href="https://github.com/randomslap" target="_blank" className="no-cursor" style={{ color: 'white' }}>
+                        <GitHubIcon style={{ fontSize: 50 }} />
+                    </IconButton>
                 </Fade>
                 <Fade in style={{ transitionDelay: '1300ms' }}>
-                    <a href="https://www.linkedin.com/in/kentokazaki/" target="_blank">
-                        <IconButton className="no-cursor" style={{ color: 'white' }}>
-                            <LinkedInIcon style={{ fontSize: 60 }} />
-                        </IconButton>
-                    </a>
+                    <IconButton href="https://www.linkedin.com/in/kentokazaki/" target="_blank" className="no-cursor" style={{ color: 'white' }}>
+                        <LinkedInIcon style={{ fontSize: 60 }} />
+                    </IconButton>
                 </Fade>
             </Stack>
         </Stack>
