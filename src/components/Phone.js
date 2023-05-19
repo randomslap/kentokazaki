@@ -124,7 +124,19 @@ const Scene = ({ portal, ...props }) => {
                         <Clone object={[nodes['Rectangle 4'], nodes['Rectangle 3'], nodes['Boolean 2']]} inject={<meshStandardMaterial color="black" />} />
                         <Mask id={1} colorWrite={false} depthWrite={true} geometry={nodes.screen.geometry} castShadow receiveShadow position={[0, 0, 9.89]}>
                             <Html ref={screen} className="content-embed" portal={portal} scale={40} transform zIndexRange={[-1, 0]}>
-                                <div>
+                                <div
+                                    onMouseDown={handleDragStart}
+                                    onMouseUp={handleDragEnd}
+                                    onMouseMove={handleDrag}
+                                    onWheel={(e) => {
+                                        console.log(e.deltaY)
+                                        if (prevPos > -1900) {
+                                            setPrevPos(prevPos - e.deltaY)
+                                        } else {
+                                            setPrevPos(prevPos + e.deltaY)
+                                        }
+                                        console.log(prevPos)
+                                    }}>
                                     <Screen />
                                 </div>
                             </Html>

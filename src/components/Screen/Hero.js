@@ -64,7 +64,7 @@ const Hero = () => {
                         <p style={{ margin: 0 }}>Use the fingertip to click</p>
                     </Fade>
                     <Fade in style={{ transitionDelay: '1800ms' }}>
-                        <p style={{ margin: 0 }}>Use scrollwheel to scroll</p>
+                        <p style={{ margin: 0 }}>Use scrollwheel or click and drag to scroll</p>
                     </Fade>
                     <Fade in style={{ transitionDelay: '1900ms' }}>
                         <p style={{ margin: 0 }}>Hold click to zoom</p>
