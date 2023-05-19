@@ -48,7 +48,7 @@ const Popup = ({ open, handleClose, project }) => (
         aria-describedby="modal-modal-description"
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Card sx={{ maxWidth: 400, height: 575 }} color="dark">
-            <CardMedia component="img" alt="green iguana" height={350} image={project?.image} />
+            <CardMedia component="img" alt={project?.title} height={350} image={project?.image} />
             <Stack flex justifyContent={'space-between'} height={'35%'}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -98,7 +98,7 @@ const Portfolio = () => {
             <Stack spacing={10} marginY={15}>
                 {cards.map((card, i) => (
                     <Card sx={{ maxWidth: 300 }} color="dark" key={i} onClick={() => handleOpen(card)}>
-                        <CardMedia component="img" alt="green iguana" height="190" image={card.image} />
+                        <CardMedia component="img" alt={card.title} height="190" image={card.image} />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {card.title}

@@ -19,7 +19,7 @@ const Hero = () => {
             <Fade in style={{ transitionDelay: '500ms' }}>
                 <h4>Hi there!</h4>
             </Fade>
-            <Fade in style={{ transitionDelay: '300ms' }}>
+            <Fade in style={{ transitionDelay: '600ms' }}>
                 <Avatar alt="Kent Okazaki" src="https://avatars.githubusercontent.com/u/12478668?v=4" sx={{ width: 126, height: 126 }} />
             </Fade>
             <Fade in style={{ transitionDelay: '700ms' }}>
