@@ -30,7 +30,7 @@ body,
 
 body {
     background: radial-gradient(circle, rgba(255, 240, 246, 1) 0%, #00bcd4 35%, #009688 100%) !important;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 768px) {
         background: #292727 !important;
     }
 }
