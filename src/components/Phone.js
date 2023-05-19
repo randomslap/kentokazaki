@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useLayoutEffect, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl } from '@react-three/drei'
+import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl, Scroll, ScrollControls } from '@react-three/drei'
 import useSpline from '@splinetool/r3f-spline'
 
 import useWindowSize from '../hooks/useWindowSize'
@@ -53,7 +53,16 @@ const Scene = ({ portal, ...props }) => {
     const v = new THREE.Vector3()
     const wheel = useRef(0)
     const hand = useRef()
+    const screen = useRef()
     const [isClicked, click] = useState(false)
+    const [prevPos, setPrevPos] = useState(0)
+    const mouseCoords = useRef({
+        startX: 0,
+        startY: 0,
+        scrollLeft: 0,
+        scrollTop: 0,
+    })
+    const [isMouseDown, setIsMouseDown] = useState(false)
     const { nodes } = useSpline('/scroll.splinecode')
     const stencil = useMask(1, true)
     useLayoutEffect(() => {
@@ -69,6 +78,35 @@ const Scene = ({ portal, ...props }) => {
         state.camera.lookAt(0, 0, 0)
         state.camera.updateProjectionMatrix()
     })
+
+    const handleDragStart = (e) => {
+        if (!screen.current) return
+        const slider = screen.current
+        const startX = e.pageX - slider.offsetLeft
+        const startY = e.pageY - slider.offsetTop
+        const scrollLeft = slider.scrollLeft
+        const scrollTop = prevPos
+        mouseCoords.current = { startX, startY, scrollLeft, scrollTop }
+        setIsMouseDown(true)
+    }
+
+    const handleDragEnd = () => {
+        setIsMouseDown(false)
+        const slider = screen.current
+        setPrevPos(slider.scrollTop)
+        if (!slider) return
+    }
+
+    const handleDrag = (e) => {
+        if (!isMouseDown || !screen.current) return
+        e.preventDefault()
+        const slider = screen.current
+        const y = e.pageY - slider.offsetTop
+        const walkY = mouseCoords.current.startY - y + prevPos
+        slider.scrollTop = walkY
+    }
+
+    // Temporary work around for rerender issue
     useEffect(() => {
         click(true)
         setTimeout(() => {
@@ -80,13 +118,15 @@ const Scene = ({ portal, ...props }) => {
             <group ref={hand}>
                 <Clone position={[250, -190, 0]} object={nodes['hand-r']} rotation-y={0.35} inject={<meshStandardMaterial color="white" />} />
             </group>
-            <FloatImpl floatIntensity={25} rotationIntensity={0.05} speed={1}>
+            <FloatImpl floatIntensity={100} rotationIntensity={0.05} speed={1}>
                 <group position={[0, 30, 0]} rotation={[-0.15, 0, 0]}>
                     <group name="phone" position={[0, 0, -70]}>
                         <Clone object={[nodes['Rectangle 4'], nodes['Rectangle 3'], nodes['Boolean 2']]} inject={<meshStandardMaterial color="black" />} />
                         <Mask id={1} colorWrite={false} depthWrite={true} geometry={nodes.screen.geometry} castShadow receiveShadow position={[0, 0, 9.89]}>
-                            <Html className="content-embed" portal={portal} scale={40} transform zIndexRange={[-1, 0]}>
-                                <Screen />
+                            <Html ref={screen} className="content-embed" portal={portal} scale={40} transform zIndexRange={[-1, 0]}>
+                                <div>
+                                    <Screen />
+                                </div>
                             </Html>
                         </Mask>
                         <mesh

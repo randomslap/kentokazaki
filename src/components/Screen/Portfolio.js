@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Button, Card, CardContent, CardMedia, Modal, Typography, Stack } from '@mui/material'
+import { Button, Card, CardContent, CardMedia, Modal, Typography, Stack } from '@mui/material'
 
 const cards = [
     {
@@ -101,7 +101,7 @@ const Portfolio = () => {
         <>
             <Stack spacing={10} marginY={15}>
                 {cards.map((card, i) => (
-                    <Card sx={{ maxWidth: 300 }} color="dark" key={i} onClick={() => handleOpen(card)}>
+                    <Card sx={{ maxWidth: 300 }} color="dark" key={i}>
                         <CardMedia component="img" alt={card.title} height="190" image={card.image} />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
@@ -112,7 +112,7 @@ const Portfolio = () => {
                             </Typography>
                         </CardContent>
                         <Stack>
-                            <Button className="no-cursor" size="large">
+                            <Button className="no-cursor" size="large" onClick={() => handleOpen(card)}>
                                 View Details
                             </Button>
                         </Stack>

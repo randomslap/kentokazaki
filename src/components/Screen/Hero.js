@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 
 import useWindowSize from '../../hooks/useWindowSize'
 
-const TEXTS = ['Kent Okazaki', 'a Full-Stack Developer', 'a Mobile App Developer', 'a software nerd']
+const TEXTS = ['Kent Okazaki', 'a Mobile App Developer', 'a Full-Stack Developer', 'a software nerd']
 
 const Hero = () => {
     const [index, setIndex] = useState(0)
@@ -30,7 +30,7 @@ const Hero = () => {
                 <h4>Hi there!</h4>
             </Fade>
             <Fade in style={{ transitionDelay: '600ms' }}>
-                <Avatar alt="Kent Okazaki" src="https://avatars.githubusercontent.com/u/12478668?v=4" sx={{ width: 126, height: 126 }} />
+                <Avatar alt="Kent Okazaki" src="https://avatars.githubusercontent.com/u/12478668?v=4" sx={{ width: 126, height: 126 }} draggable="false" />
             </Fade>
             <Fade in style={{ transitionDelay: '700ms' }}>
                 <Stack alignItems="center" justifyContent="center" textAlign="center" direction={'row'} spacing={0.75}>
@@ -48,12 +48,29 @@ const Hero = () => {
                         <GitHubIcon style={{ fontSize: 50 }} />
                     </IconButton>
                 </Fade>
+
                 <Fade in style={{ transitionDelay: '1300ms' }}>
                     <IconButton href="https://www.linkedin.com/in/kentokazaki/" target="_blank" className="no-cursor" style={{ color: 'white' }}>
                         <LinkedInIcon style={{ fontSize: 60 }} />
                     </IconButton>
                 </Fade>
             </Stack>
+            {width > 768 && (
+                <Stack alignItems="center" justifyContent="center" textAlign="center" spacing={0}>
+                    <Fade in style={{ transitionDelay: '1600ms' }}>
+                        <h4>How to navigate:</h4>
+                    </Fade>
+                    <Fade in style={{ transitionDelay: '1700ms' }}>
+                        <p style={{ margin: 0 }}>Use the fingertip to click</p>
+                    </Fade>
+                    <Fade in style={{ transitionDelay: '1800ms' }}>
+                        <p style={{ margin: 0 }}>Use scrollwheel to scroll</p>
+                    </Fade>
+                    <Fade in style={{ transitionDelay: '1900ms' }}>
+                        <p style={{ margin: 0 }}>Hold click to zoom</p>
+                    </Fade>
+                </Stack>
+            )}
         </Stack>
     )
 }

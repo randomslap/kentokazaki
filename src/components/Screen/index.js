@@ -6,20 +6,17 @@ import Portfolio from './Portfolio'
 
 const Screen = () => {
     const myRef = useRef(null)
+
     const executeScroll = () => myRef.current.scrollIntoView({ behavior: 'smooth' })
+
     return (
-        <Stack flex direction={'column'} alignItems={'center'}>
+        <Stack flex direction={'column'} alignItems={'center'} spacing={4}>
             <Hero />
-            <Stack flex direction={'column'} alignItems={'center'}>
-                <Box>
-                    <p>Scroll or Click this Button!</p>
-                </Box>
-                <Box>
-                    <Button className="no-cursor" onClick={executeScroll} size="large" variant="outlined" style={{ color: 'white', borderColor: 'white' }}>
-                        Check out my work
-                    </Button>
-                </Box>
-            </Stack>
+            <Box>
+                <Button className="no-cursor" onClick={executeScroll} size="large" variant="outlined" style={{ color: 'white', borderColor: 'white' }}>
+                    Check out my work
+                </Button>
+            </Box>
             <div ref={myRef}>
                 <Portfolio id="portfolio" />
             </div>
