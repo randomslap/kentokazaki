@@ -6,7 +6,7 @@ import Portfolio from './Portfolio'
 
 const Screen = () => {
     const myRef = useRef(null)
-    const executeScroll = () => myRef.current.scrollIntoView()
+    const executeScroll = () => myRef.current.scrollIntoView({ behavior: 'smooth' })
     return (
         <Stack flex direction={'column'} alignItems={'center'}>
             <Hero />
