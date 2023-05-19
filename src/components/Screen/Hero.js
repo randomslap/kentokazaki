@@ -5,17 +5,28 @@ import TextTransition, { presets } from 'react-text-transition'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 
+import useWindowSize from '../../hooks/useWindowSize'
+
 const TEXTS = ['Kent Okazaki', 'a Full-Stack Developer', 'a Mobile App Developer', 'a software nerd']
 
 const Hero = () => {
     const [index, setIndex] = useState(0)
+    const { width } = useWindowSize()
     useEffect(() => {
         const intervalId = setInterval(() => setIndex((index) => index + 1), 3000)
         return () => clearTimeout(intervalId)
     }, [])
 
     return (
-        <Stack container justifyContent="flex-start" alignItems="center" height={700} width={'100%'} paddingTop={20} spacing={1} flexDirection={'column'}>
+        <Stack
+            container
+            justifyContent="flex-start"
+            alignItems="center"
+            height={width > 768 ? 700 : '80vh'}
+            width={'100%'}
+            paddingTop={20}
+            spacing={1}
+            flexDirection={'column'}>
             <Fade in style={{ transitionDelay: '500ms' }}>
                 <h4>Hi there!</h4>
             </Fade>

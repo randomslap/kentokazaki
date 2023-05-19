@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { Stack, Button, Box } from '@mui/material'
 
 import Hero from './Hero'
@@ -7,9 +7,6 @@ import Portfolio from './Portfolio'
 const Screen = () => {
     const myRef = useRef(null)
     const executeScroll = () => myRef.current.scrollIntoView()
-    useEffect(() => {
-        console.log('object')
-    }, [])
     return (
         <Stack flex direction={'column'} alignItems={'center'}>
             <Hero />

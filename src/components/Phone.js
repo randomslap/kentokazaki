@@ -3,18 +3,22 @@ import { useLayoutEffect, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl } from '@react-three/drei'
 import useSpline from '@splinetool/r3f-spline'
+
+import useWindowSize from '../hooks/useWindowSize'
+
 import Screen from './Screen'
 
 const Phone = () => {
     const container = useRef()
     const domContent = useRef()
+    const screenSize = useWindowSize()
     useEffect(() => {
         document.querySelector('html').classList.add('no-cursor')
         document.querySelectorAll('button:not(.navbar-button)').forEach((element) => {
             element.classList.add('no-cursor')
         })
     }, [])
-    return (
+    return screenSize.width > 768 ? (
         <div ref={container} className="content-container">
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden' }} ref={domContent} />
             <Canvas
@@ -39,6 +43,8 @@ const Phone = () => {
                 <Scene portal={domContent} position={[0, -50, 0]} />
             </Canvas>
         </div>
+    ) : (
+        <Screen />
     )
 }
 
