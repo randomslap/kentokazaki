@@ -31,7 +31,7 @@ const Screen = ({ drag, handleOpen }) => {
                             <h4>How to navigate:</h4>
                         </Fade>
                         <Fade in style={{ transitionDelay: '1700ms' }}>
-                            <p style={{ margin: 0 }}>Use the fingertip to click</p>
+                            <p style={{ margin: 0 }}>Click with fingertip to press</p>
                         </Fade>
                         <Fade in style={{ transitionDelay: '1800ms' }}>
                             <p style={{ margin: 0 }}>{!drag ? 'Use scrollwheel' : 'Click and drag'} to scroll</p>
