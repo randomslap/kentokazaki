@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Stack, Card, Modal, ToggleButtonGroup, ToggleButton } from '@mui/material'
 
-const Settings = ({ open, handleClose, dsetDrag }) => {
+const Settings = ({ open, handleClose, setDrag }) => {
     const [alignment, setAlignment] = useState('scroll')
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment || alignment)
