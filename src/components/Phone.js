@@ -40,7 +40,7 @@ const Phone = () => {
                     <orthographicCamera attach="shadow-camera" args={[-2000, 2000, 2000, -2000, -10000, 10000]} />
                 </directionalLight>
                 <OrthographicCamera makeDefault={true} far={100000} near={-100000} position={[0, 0, 1000]} />
-                <hemisphereLight intensity={0.5} color="cyan" position={[0, 1, 0]} />
+                <hemisphereLight intensity={0.5} color="blue" position={[0, 1, 0]} />
                 <Scene portal={domContent} position={[0, -50, 0]} />
             </Canvas>
         </div>
