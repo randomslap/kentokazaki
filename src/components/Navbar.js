@@ -52,7 +52,7 @@ const Navbar = (props) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav">
+            <AppBar component="nav" sx={{ background: 'black', cursor: 'default' }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -63,9 +63,7 @@ const Navbar = (props) => {
                         className="navbar-button">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-                        Kent Okazaki
-                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }} />
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button href={item.link} target="_blank" key={item.name} sx={{ color: '#fff' }} className="navbar-button">
