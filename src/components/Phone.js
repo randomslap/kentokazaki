@@ -55,6 +55,7 @@ const Scene = ({ portal, ...props }) => {
     const wheel = useRef(0)
     const hand = useRef()
     const screen = useRef()
+    const phone = useRef()
     const [open, setOpen] = useState(false)
     const [drag, setDrag] = useState(false)
     const [isClicked, click] = useState(false)
@@ -77,7 +78,8 @@ const Scene = ({ portal, ...props }) => {
         hand.current.rotation.x = THREE.MathUtils.lerp(hand.current.rotation.x, isClicked ? -0.7 : -0.5, 0.2)
         hand.current.position.lerp({ x: v.x - 100, y: -wheel.current + v.y, z: v.z }, 0.4)
         state.camera.zoom = THREE.MathUtils.lerp(state.camera.zoom, isClicked ? 1 : 0.9, isClicked ? 0.025 : 0.15)
-        state.camera.position.lerp({ x: -state.pointer.x * 400, y: -state.pointer.y * 200, z: 1000 }, 0.1)
+        phone.current.rotation.x = THREE.MathUtils.lerp(0, -state.pointer.y, 0.25)
+        phone.current.rotation.y = THREE.MathUtils.lerp(0, state.pointer.x, 0.25)
         state.camera.lookAt(0, 0, 0)
         state.camera.updateProjectionMatrix()
     })
@@ -137,7 +139,7 @@ const Scene = ({ portal, ...props }) => {
             <group ref={hand}>
                 <Clone position={[250, -190, 0]} object={nodes['hand-r']} rotation-y={0.35} inject={<meshStandardMaterial color="white" />} />
             </group>
-            <FloatImpl floatIntensity={100} rotationIntensity={0.05} speed={1}>
+            <FloatImpl ref={phone} floatIntensity={100} rotationIntensity={0.05} speed={1}>
                 <group position={[0, 30, 0]} rotation={[-0.15, 0, 0]}>
                     <group name="phone" position={[0, 0, -70]}>
                         <Clone object={[nodes['Rectangle 4'], nodes['Rectangle 3'], nodes['Boolean 2']]} inject={<meshStandardMaterial color="black" />} />
